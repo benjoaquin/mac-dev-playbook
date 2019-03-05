@@ -1,0 +1,8 @@
+# configuration variables for R
+
+homebrew_installed_packages:
+  - r
+  - unixodbc  # helps with the R package `odbc`
+
+homebrew_cask_apps:
+  - rstudio  # R IDE

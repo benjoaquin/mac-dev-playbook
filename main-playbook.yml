@@ -1,0 +1,60 @@
+---
+- hosts: all
+  connection: local
+
+  # default configuration
+  vars_files:
+    - "{{ playbook_dir }}/default.config.yml"
+
+  # optional configuration
+  pre_tasks:
+    - debug: msg="Ansible Version"
+
+    - name: load optional local config.yml
+      include_vars:
+        dir: "{{ playbook_dir }}"
+        files_matching: "^config.yml$"
+      tags: ["always"]
+
+    - name: rstats config
+      include_vars:
+        file: "{{ playbook_dir }}/vars/rstats.yml"
+        name: rstats
+      when: configure_rstats
+      tags: ["rstats"]
+
+    - name: python config
+      include_vars:
+        file: "{{ playbook_dir }}/vars/python.yml"
+        name: python
+      when: configure_python
+      tags: ["python"]
+
+    - name: combine brew config items
+      set_fact:
+        one_fact: something
+        homebrew_installed_packages: 
+          - "{{ homebrew_installed_packages + rstats.homebrew_installed_packages + python.homebrew_installed_packages }}"
+        homebrew_cask_apps: 
+          - "{{ homebrew_cask_apps + rstats.homebrew_cask_apps + python.homebrew_cask_apps }}"
+
+  # ansible roles
+  roles:
+    - role: geerlingguy.homebrew
+      tags: ["homebrew", "rstats", "python"]
+    - role: geerlingguy.mas
+      when: configure_mac_app_store
+      tags: ["mas"]
+
+
+  # ansible tasks
+  tasks:
+    # - debug: msg="Hello"
+    # - debug: msg={{homebrew_installed_packages}}
+    # - debug: msg={{homebrew_cask_apps}}
+
+    - include: "{{ playbook_dir }}/tasks/ansible-setup.yml"
+
+    - include: "{{ playbook_dir }}/tasks/python-pip.yml"
+      when: configure_python
+      tags: ["python"]

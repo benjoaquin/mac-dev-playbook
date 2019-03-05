@@ -1,0 +1,26 @@
+# configuration variables for Python
+
+homebrew_installed_packages:
+  - python3
+ 
+homebrew_cask_apps:
+  # - anaconda  # might need to run `export PATH=/usr/local/anaconda3/bin:"$PATH"` to make it work
+  - pycharm-ce  # Python IDE - https://www.jetbrains.com/pycharm/
+
+
+# pip packages to install
+pip_packages: 
+  - name: mkdocs
+    state: present # present/absent/latest, default: present
+    version: "0.16.3" # default: N/A
+    executable: pip3
+  - name: h5py
+    state: present
+    executable: pip3
+  - name: keras  # `--upgrade --ignore-installed six` helps with `distutils installed project` error
+    state: present
+    executable: pip3
+  - name: tensorflow
+    state: present
+    executable: pip3
+

@@ -1,99 +1,66 @@
 ---
+# enable (yes) or disable (no) certain software
+configure_mac_app_store: no
+configure_python: no
+configure_rstats: no
+
+
+# define local download folder
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: yes
-configure_sudoers: yes
-configure_terminal: yes
-configure_osx: yes
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
-dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
-dotfiles_files:
-  - .bash_profile
-  - .gitignore
-  - .inputrc
-  - .osx
-  - .vimrc
-
-homebrew_installed_packages:
-  # - ansible # Installed via Pip.
-  - autoconf
-  - bash-completion
-  - chromedriver
-  - doxygen
-  - gettext
-  - gifsicle
-  - git
-  - go
-  - gpg
-  - hub
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
-  - node
-  - nvm
-  - ssh-copy-id
-  - cowsay
-  - readline
-  - openssl
-  - pv
-  - wget
-  - wrk
-
+# homberew "tap" installation sources
 homebrew_taps:
   - homebrew/core
-  - caskroom/cask
-  - homebrew/php
+  - homebrew/cask
+  - homebrew/cask-drivers
 
+
+# packages to instsall with Homebrew
+# - search for brew packages in the cmd line with: brew search <package-name>
+homebrew_installed_packages:
+  - git
+  - openssl
+  - mas
+  - readline
+  - sqlite
+  - wget
+
+
+# applications to install with Homebrew Cask
+# - search for cask applications in the cmd line with: brew search <app-name>
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - docker
-  - dropbox
-  # - fing # Download link keeps getting changed, d'oh!
-  - firefox
-  - google-chrome
-  - handbrake
-  - licecap
-  - limechat
-  - macvim
-  - sequel-pro
-  - skitch
-  - slack
-  - sublime-text
-  - transmit
-  - vagrant
-  - virtualbox
+  - db-browser-for-sqlite. # SQLite IDE - https://sqlitebrowser.org
+  - docker  # containerization - https://www.docker.com/
+  - dropbox  # cloud file system - https://www.dropbox.com/
+  - google-chrome  # web-browswer - https://www.google.com/chrome/
+  - iterm2  # terminal app - https://www.iterm2.com
+  - licecap  # gif screen capture - https://www.cockos.com/licecap/
+  - macdown  # markdown text   editor - https://macdown.uranusjr.com
+  - sequel-pro  # SQL client - https://www.sequelpro.com/
+  - skitch  # image screen capture - https://evernote.com/products/skitch
+  - slack   # chat - https://slack.com
+  - sourcetree  # Git UI - https://www.sourcetreeapp.com
+  - sublime-text  # text editor - https://www.sublimetext.com
+  - textexpander  # text snippets - https://textexpander.com
+  - vlc  # video player https://www.videolan.org/vlc/index.html
 
-# See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+
+# blank default variables for optional programming languages
+rstats:
+  homebrew_installed_packages: []
+  homebrew_cask_apps: []
+python:
+  homebrew_installed_packages: []
+  homebrew_cask_apps: []
+
+
+# Mac App Store (mas) applications
+# - search for mas apps in the cmd line with: mas search <app-name>
+# - NOTE: need to save your password in AppStore for free apps....
+mas_installed_apps: [
+  # - { id: 1179623856, name: "Pastebot"}  # example
+]
 mas_email: ""
 mas_password: ""
-
-osx_script: "~/.osx --no-restart"
-
-# Install packages from other package managers.
-# Note: You are responsible for making sure the required package managers are
-# installed, eg. through homebrew.
-composer_packages: []
-  # - name: drush
-  #   state: present # present/absent, default: present
-  #   version: "^8.1" # default: N/A
-gem_packages: []
-  # - name: bundler
-  #   state: present # present/absent/latest, default: present
-  #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
-  # - name: webpack
-  #   state: present # present/absent/latest, default: present
-  #   version: "^2.6" # default: N/A
-pip_packages: []
-  # - name: mkdocs
-  #   state: present # present/absent/latest, default: present
-  #   version: "0.16.3" # default: N/A
-
-# Glob pattern to ansible task files to run after all other tasks are finished.
-post_provision_tasks: []
