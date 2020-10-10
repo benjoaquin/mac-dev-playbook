@@ -1,8 +1,8 @@
 ---
 # enable (yes) or disable (no) certain software
-configure_mac_app_store: no
-configure_python: no
-configure_rstats: no
+configure_mac_app_store: yes
+configure_python: yes
+configure_rstats: yes
 
 
 # define local download folder
@@ -17,34 +17,76 @@ homebrew_taps:
 
 
 # packages to instsall with Homebrew
-# - search for brew packages in the cmd line with: brew search <package-name>
+# - search for brew packages in the cmd line with: brew search <package-name> or here: https://formulae.brew.sh
 homebrew_installed_packages:
+ # - ansible # Installed via Pip.
+  - autoconf
+  - bash-completion
+  - cowsay
+  - doxygen
+  - dockutil
+  - fish
+  - gettext
+  - gifsicle
   - git
+  - go
+  - gpg
+  - hub
+  - httpie
+  - iperf
+  - libevent
+  - libgit2
   - openssl
+  - pv
+  - mcrypt
   - mas
+  - nano
+  - nmap
+  - node
+  - nvm
+  - python
+  - r
   - readline
   - sqlite
+  - ssh-copy-id
+  - tmux
+  - unixodbc # helps with the R package `odbc`
   - wget
+  - wrk
+  - zsh
 
 
 # applications to install with Homebrew Cask
-# - search for cask applications in the cmd line with: brew search <app-name>
+# - search for brew packages in the cmd line with: brew search <package-name> or here: https://formulae.brew.sh
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - anaconda # might need to run `export PATH=/usr/local/anaconda3/bin:"$PATH"` to make it work
+  - backblaze
+  - bbedit
+  - basictex
+  - capture-one
+  - chromedriver
+  - datagrip
   - db-browser-for-sqlite. # SQLite IDE - https://sqlitebrowser.org
   - docker  # containerization - https://www.docker.com/
   - dropbox  # cloud file system - https://www.dropbox.com/
   - google-chrome  # web-browswer - https://www.google.com/chrome/
+  - hey
   - iterm2  # terminal app - https://www.iterm2.com
   - licecap  # gif screen capture - https://www.cockos.com/licecap/
   - macdown  # markdown text   editor - https://macdown.uranusjr.com
-  - sequel-pro  # SQL client - https://www.sequelpro.com/
-  - skitch  # image screen capture - https://evernote.com/products/skitch
+  - macvim
+  - notion
+  - pycharm-ce
+  - rstudio
+  - sketchup
   - slack   # chat - https://slack.com
   - sourcetree  # Git UI - https://www.sourcetreeapp.com
   - sublime-text  # text editor - https://www.sublimetext.com
-  - textexpander  # text snippets - https://textexpander.com
+#  - textexpander  # text snippets - https://textexpander.com
+  - tidal
   - vlc  # video player https://www.videolan.org/vlc/index.html
+  - zoomus
 
 
 # blank default variables for optional programming languages
@@ -59,8 +101,15 @@ python:
 # Mac App Store (mas) applications
 # - search for mas apps in the cmd line with: mas search <app-name>
 # - NOTE: need to save your password in AppStore for free apps....
-mas_installed_apps: [
-  # - { id: 1179623856, name: "Pastebot"}  # example
-]
-mas_email: ""
+mas_installed_apps: 
+  - { id: 961632517, name: "Be Focused Pro"}
+  - { id: 1189824719, name: "Jayson"}
+  - { id: 441258766, name: "Magnet"}
+  - { id: 920404675, name: "Monodraw"}
+  - { id: 1346203938, name: "OmniFocus 3"}
+  - { id: 1179623856, name: "Pastebot"}
+  - { id: 1153157709, name: "Speedtest"}
+  - { id: 1353137878, name: "Super Easy Timer"}
+  - { id: 497799835, name: "Xcode"}
+mas_email: "benjoaquin@mac.com"
 mas_password: ""
