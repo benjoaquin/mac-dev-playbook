@@ -62,12 +62,12 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - anaconda # might need to run `export PATH=/usr/local/anaconda3/bin:"$PATH"` to make it work
   - backblaze
-  - bbedit
+#  - bbedit
   - basictex
-  - capture-one
+#  - capture-one
   - chromedriver
   - datagrip
-  - db-browser-for-sqlite. # SQLite IDE - https://sqlitebrowser.org
+  - db-browser-for-sqlite # SQLite IDE - https://sqlitebrowser.org
   - docker  # containerization - https://www.docker.com/
   - dropbox  # cloud file system - https://www.dropbox.com/
   - google-chrome  # web-browswer - https://www.google.com/chrome/
@@ -103,7 +103,7 @@ python:
 # - NOTE: need to save your password in AppStore for free apps....
 mas_installed_apps: 
   - { id: 961632517, name: "Be Focused Pro"}
-  - { id: 1189824719, name: "Jayson"}
+  - { id: 1468691718, name: "Jayson"}
   - { id: 441258766, name: "Magnet"}
   - { id: 920404675, name: "Monodraw"}
   - { id: 1346203938, name: "OmniFocus 3"}
