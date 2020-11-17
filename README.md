@@ -7,11 +7,11 @@ This repo provides an automated way to set up your Mac. It uses [Ansible](https:
 The Ansible "playbook" we will use relies on a few things. Follow the install/setup steps below.
 
   1. Install Apple Xcode -- you can install Xcode from the Mac App Store.
-  * Install [Homebrew](https://brew.sh) -- this is a popular Mac package manager. 
-  * Install [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#latest-releases-via-pip).
-  * Create a code directory formatted like: `~/code/<git_platform>/<platform_account>/<repo_name>`
-  * Clone this repository to your local drive from the platform_account directory with `git clone <url>`
-  * Accept the Xcode license agreement by running: `sudo xcodebuild -license accept`
+  1. Install [Homebrew](https://brew.sh) -- this is a popular Mac package manager. 
+  1. use Homebrew to install Ansible: `brew install ansible`.
+  1. Create a code directory formatted like: `~/code/<git_platform>/<platform_account>/<repo_name>`
+  1. Clone this repository to your local drive from the platform_account directory with `git clone <url>`
+  1. Accept the Xcode license agreement by running: `sudo xcodebuild -license accept`
 
 > Note: If some Homebrew commands fail, you might need to agree to Xcode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 

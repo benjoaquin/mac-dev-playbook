@@ -49,9 +49,9 @@
 
   # ansible tasks
   tasks:
-    # - debug: msg="Hello"
-    # - debug: msg={{homebrew_installed_packages}}
-    # - debug: msg={{homebrew_cask_apps}}
+    - debug: msg="Hello"
+    - debug: msg={{homebrew_installed_packages}}
+    - debug: msg={{homebrew_cask_apps}}
 
     - include: "{{ playbook_dir }}/tasks/ansible-setup.yml"
 

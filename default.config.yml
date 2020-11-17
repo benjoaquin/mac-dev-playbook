@@ -25,7 +25,6 @@ homebrew_installed_packages:
   - cowsay
   - doxygen
   - dockutil
-  - fish
   - gettext
   - gifsicle
   - git
