@@ -110,5 +110,6 @@ mas_installed_apps:
   - { id: 1153157709, name: "Speedtest"}
   - { id: 1353137878, name: "Super Easy Timer"}
   - { id: 497799835, name: "Xcode"}
+  - { id: 1103915944, name: "Greenshot"}
 mas_email: "benjoaquin@mac.com"
 mas_password: ""
