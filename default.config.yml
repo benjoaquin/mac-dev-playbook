@@ -1,8 +1,8 @@
 ---
 # enable (yes) or disable (no) certain software
 configure_mac_app_store: yes
-configure_python: yes
-configure_rstats: yes
+configure_python: no
+configure_rstats: no
 
 
 # define local download folder
@@ -19,10 +19,9 @@ homebrew_taps:
 # packages to instsall with Homebrew
 # - search for brew packages in the cmd line with: brew search <package-name> or here: https://formulae.brew.sh
 homebrew_installed_packages:
- # - ansible # Installed via Pip.
+  - ansible 
   - autoconf
   - bash-completion
-  - cowsay
   - doxygen
   - dockutil
   - gettext
@@ -59,11 +58,10 @@ homebrew_installed_packages:
 # - search for brew packages in the cmd line with: brew search <package-name> or here: https://formulae.brew.sh
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - anaconda # might need to run `export PATH=/usr/local/anaconda3/bin:"$PATH"` to make it work
+  - atext
   - backblaze
-#  - bbedit
+  - bbedit
   - basictex
-#  - capture-one
   - chromedriver
   - datagrip
   - db-browser-for-sqlite # SQLite IDE - https://sqlitebrowser.org
@@ -82,7 +80,6 @@ homebrew_cask_apps:
   - slack   # chat - https://slack.com
   - sourcetree  # Git UI - https://www.sourcetreeapp.com
   - sublime-text  # text editor - https://www.sublimetext.com
-#  - textexpander  # text snippets - https://textexpander.com
   - tidal
   - vlc  # video player https://www.videolan.org/vlc/index.html
   - zoomus
@@ -101,15 +98,21 @@ python:
 # - search for mas apps in the cmd line with: mas search <app-name>
 # - NOTE: need to save your password in AppStore for free apps....
 mas_installed_apps: 
-  - { id: 961632517, name: "Be Focused Pro"}
+  - { id: 1444383602, name: "GoodNotes 5"}
+  - { id: 1103915944, name: "Greenshot"}
   - { id: 1468691718, name: "Jayson"}
   - { id: 441258766, name: "Magnet"}
+  - { id: 462054704, name: "Microsoft Word"}
+  - { id: 784801555, name: "Microsoft OneNote"}
+  - { id: 985367838, name: "Microsoft Outlook"}
+  - { id: 462058435, name: "Microsoft Excel"}
+  - { id: 462062816, name: "Microsoft PowerPoint"}
   - { id: 920404675, name: "Monodraw"}
   - { id: 1346203938, name: "OmniFocus 3"}
+  - { id: 823766827, name: "OneDrive"}
   - { id: 1179623856, name: "Pastebot"}
   - { id: 1153157709, name: "Speedtest"}
   - { id: 1353137878, name: "Super Easy Timer"}
   - { id: 497799835, name: "Xcode"}
-  - { id: 1103915944, name: "Greenshot"}
 mas_email: "benjoaquin@mac.com"
 mas_password: ""
