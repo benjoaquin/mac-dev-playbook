@@ -93,7 +93,10 @@ There are several configurations that are meanigful to me but I don't know how t
 		- Sidebar to include /, ~/, Pictures
 - Other apps
 	- Sourcetree
-		- Use OAuth with HTTPS, [if you need SSH these docs may be helpful](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
+		- For GitHub configure Basic auth over HTTPS with a Personal Access Token
+		- Github > Settings > Developer settings > Personal access tokens
+			- Name the PAT "Sourcetree on <device model> (<device serial>)"
+		- [If you need SSH these docs may be helpful](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
 
 <br>
 
