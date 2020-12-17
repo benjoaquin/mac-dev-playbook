@@ -1,6 +1,6 @@
 # Mac Setup with Ansible
 
-This repo provides an automated way to set up your Mac. It uses [Ansible](https://www.ansible.com) to programmatically install software libraries and applications. The repo comes with some default install configuration, but you can also customize it to include the applications you care about.
+This repo provides an automated way to install packages and applications on your Mac. It uses [Ansible](https://www.ansible.com) to orchestrate programmatically installing software libraries and applications using [Homebrew](https://brew.sh), MAS, pip or R. The repo comes with some default install configuration, but you can also customize it to include the applications you care about.
 
 
 ## Getting Started
@@ -8,10 +8,10 @@ The Ansible "playbook" we will use relies on a few things. Follow the install/se
 
   1. Install Apple Xcode -- you can install Xcode from the Mac App Store.
   1. Install [Homebrew](https://brew.sh) -- this is a popular Mac package manager. 
-  1. use Homebrew to install Ansible: `brew install ansible`.
-  1. Create a code directory formatted like: `~/code/<git_platform>/<platform_account>/<repo_name>`
-  1. Clone this repository to your local drive from the platform_account directory with `git clone https://github.com/benjoaquin/mac-dev-playbook`
-  1. Accept the Xcode license agreement by running: `sudo xcodebuild -license accept`
+  1. Use Homebrew to install Ansible: `brew install ansible`.
+  1. Create a code directory formatted like: `~/code/<git_platform>/<platform_account>/<repo_name>`.
+  1. Clone this repository to your local drive from the platform_account directory with `git clone https://github.com/benjoaquin/mac-dev-playbook`.
+  1. Accept the Xcode license agreement by running: `sudo xcodebuild -license accept`.
 
 > Note: If some Homebrew commands fail, you might need to agree to Xcode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 
@@ -61,6 +61,39 @@ Optionally, you can filter which set of processes to run by adding 1 or more "ta
 
 	$ ansible-playbook main-playbook.yml -i inventory -K --tags "homebrew,python"
 
+
+<br>
+
+## Additional configuration
+There are several configurations that are meanigful to me but I don't know how to automate. 
+
+- MacOS
+	- Sign into iMessage and enable iCloud and phone forwarding
+	- Change default apps for some extension
+		- .yml, Sublime
+		- .md, MacDown
+	- System preferences
+		- General
+			- Grey accent
+			- Graphite highlight
+			- Allow handoff
+		- Desktop & Screensaver	
+			- Desktop color to Tungsten
+			- Hotcorners
+				- Top right - Application windows
+				- Bottom right - Sleep display
+				- Bottom left - Desktop
+		- Dock
+		    - Position left
+		    - Auto hide
+		- Siri
+		    - Indian (Female)
+	- Finder preferences
+		- Show connected servers 
+		- Sidebar to include /, ~/, Pictures
+- Other apps
+	- Sourcetree
+		- Use OAuth with HTTPS, [if you need SSH these docs may be helpful](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
 
 <br>
 
