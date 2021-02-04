@@ -21,6 +21,7 @@ homebrew_taps:
 homebrew_installed_packages:
   - ansible 
   - autoconf
+  - awscli
   - bash-completion
   - doxygen
   - dockutil
@@ -38,6 +39,7 @@ homebrew_installed_packages:
   - pv
   - mcrypt
   - mas
+  - magic-wormhole
   - nano
   - nmap
   - node
@@ -112,6 +114,7 @@ mas_installed_apps:
   - { id: 823766827, name: "OneDrive"}
   - { id: 1179623856, name: "Pastebot"}
   - { id: 1153157709, name: "Speedtest"}
+  - { id: 985614903, name: "SQLPro Studio"}
   - { id: 1353137878, name: "Super Easy Timer"}
   - { id: 497799835, name: "Xcode"}
 mas_email: "benjoaquin@mac.com"
